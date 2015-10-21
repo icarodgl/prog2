@@ -7,8 +7,6 @@
 import sys
 import os
 def main():
-
-	os.system("cd escola/prog2 ")
 	if len(sys.argv) == 2:
 		text = sys.argv[1]
 		os.system("git add .")

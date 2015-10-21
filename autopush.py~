@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  sem título.py
+#  autopush.py
 #  
 #  Copyright 2015 Icaro <icaro@icaro-X550CA>
 import sys
 import os
 def main():
+
+	os.system("cd escola/prog2 ")
 	if len(sys.argv) == 2:
 		text = sys.argv[1]
 		os.system("git add .")
