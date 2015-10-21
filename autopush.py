@@ -14,7 +14,7 @@ def main():
 		os.system("git add .")
 		#text = input("mensagem: ")
 		os.system("git commit -m "+ text)
-		#os.system("git push")
+		os.system("git push")
 	else:
 		print("argumento MENSAGEM não foi digitado")
 	return 0
