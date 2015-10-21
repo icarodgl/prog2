@@ -95,21 +95,21 @@ def corrente(parstr,parint):
 	#while
 	return strpal
 #fim
-def corrente(parstr,parint):
-	strpal=""
-	ind= parint
-	if not parstr[parint].isalnum() or parint > len(parstr):
-		 return None
-	#if
-	
-	while parstr[ind].isalnum() and len(parstr) > 0: #rebobina
-		ind-=1
-	#while
-	while parstr[ind+1].isalnum():
-		ind+=1
-		strpal+=parstr[ind]
-	#while
-	return strpal
+#~ def corrente(parstr,parint):
+	#~ strpal=""
+	#~ ind= parint
+	#~ if not parstr[parint].isalnum() or parint > len(parstr):
+		 #~ return None
+	#~ #if
+	#~ 
+	#~ while parstr[ind].isalnum() and len(parstr) > 0: #rebobina
+		#~ ind-=1
+	#~ #while
+	#~ while parstr[ind+1].isalnum():
+		#~ ind+=1
+		#~ strpal+=parstr[ind]
+	#~ #while
+	#~ return strpal
 #fim
 def justificador(parstr,parint):
 	indic=0
