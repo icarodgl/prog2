@@ -9,7 +9,7 @@ import os
 def main():
 
 	text = "upado por autopush"
-	os.system("git add .")
+	os.system("git add --all")
 	#text = input("mensagem: ")
 	os.system("git commit -m "+ text)
 	os.system("git push")	
