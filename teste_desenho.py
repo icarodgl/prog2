@@ -28,10 +28,10 @@ def main():
 
 	quad = tela.create_rectangle(20,20,150,160,width=2,fill="red")
 	tela.pack()
-	#~ for i in range(100):
-		#~ tela.move(quad,3,3)
-		#~ tela.update()
-		#~ time.sleep(.1)
+	for i in range(100):
+		tela.move(quad,3,3)
+		tela.update()
+		time.sleep(.1)
 	janela.mainloop()
 	
 	return 0

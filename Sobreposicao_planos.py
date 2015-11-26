@@ -14,8 +14,8 @@ import tkinter
 import time
 import TAD_planos as TP
 def main():
-	plan1="100 100 500 500"
-	plan2="0 200 600 300"
+	plan1="200 200 400 400"
+	plan2="0 250 600 300"
 	plan3=""
 	plan4=""
 	plan5=""
@@ -27,11 +27,11 @@ def main():
 	
 	pl1=TP.cria_plano(plan1)
 	pl2=TP.cria_plano(plan2)
-	quad1= tela.create_rectangle(pl1,width=2,fill="red")
-	quad2 = tela.create_rectangle(pl2,width=2,fill="red")
-	if None != TP.area_sobreposta(pl1,pl2):
-		pl_sob = TP.area_sobreposta(pl1,pl2)
-		tela.create_rectangle(pl_sob,width=0,fill="blue")
+	quad1= tela.create_rectangle(pl1,width=1,fill="red")
+	quad2 = tela.create_rectangle(pl2,width=1,fill="blue")
+	pl_sob = TP.sobreposicao_planos(pl1,pl2)
+	if None != pl_sob:
+		tela.create_rectangle(pl_sob,width=1,fill="purple")
 	tela.pack()
 	#~ for i in range(100):
 		#~ 

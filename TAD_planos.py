@@ -53,14 +53,59 @@ def area_sobreposta(plano1,plano2):## o primeiro plano está na camada a cima.
 		return inter
 	
 #fim area_sobreposta
+def sobreposicao_planos(pl1,pl2):
+	pontos=[]
+	
+	for i in range(len(pl1)):
+		for j in range(len(pl2)):
+			if i in [0,2]:
+				if j in [1,3]:
+					pontos.append((pl1[i],pl2[j]))
+					pontos.append((pl1[i],pl1[j]))
+					
+					pontos.append((pl2[i],pl1[j]))
+					pontos.append((pl2[i],pl2[j]))	
+	print(pontos)				
+	pontos = magica_planos(pl1,pl2,pontos)
+	return pontos
+# fim sobreposição_planos
 
+def magica_planos(pl1,pl2,pontos):
+	lsaux=[]
+	menor = ()
+	maior = ()
+	for elem in pontos:
+		
+		if elem[0] >= pl1[0] and elem[0] <= pl1[2]:#ponto esta no pl1[x]?
+			if elem[1] >= pl1[1] and elem[1] <= pl1[3]:#ponto esta pl1[y]
+				
+				if elem[0] >= pl2[0] and elem[0] <= pl2[2]:#ponto esta no pl2[x]
+					if elem[1] >= pl2[1] and elem[1] <= pl2[3]:#ponto esta pl2[y]
+						lsaux.append(elem)#esta entre xy de pl1 e pl2
+	for elemA in lsaux:
+		for elemB in lsaux:
+			if elemA[0] < elemB[0] and elemA[1] < elemB[1]:#menor xy
+				menor = elemA #lado menor
+			if elemA[0] > elemB[0] and elemA[1] > elemB[1]:# maior xy
+				maior = elemA #lado maior
+	if maior != () and menor != ():
+		return [menor[0],menor[1],maior[0],maior[1]] #retorna bonitinho
+	else:
+		return None
+#acabou a magica =/
 def main():
-	p1="100 100 200 200" ## xy inicial , xy final
-	p2=" 150 150 250 250" ## xy inicial , xy final
-	plano1=cria_plano(p1)
-	plano2=cria_plano(p2)
-	print(plano1,plano2)
-	print(area_sobreposta(plano1,plano2))
+	p1="10 10 50 50"
+	p2="60 60 70 70"
+	#~ plano1=cria_plano(p1)
+	#~ plano2=cria_plano(p2)
+	#~ print(plano1,plano2)
+	#~ print(area_sobreposta(plano1,plano2))
+	p1=cria_plano(p1)
+	
+	p2=cria_plano(p2)
+	
+	sobreposto = sobreposicao_planos(p1,p2)
+	print(sobreposto)
 	return 0
 
 if __name__ == '__main__':
