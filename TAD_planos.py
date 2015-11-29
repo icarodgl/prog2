@@ -64,8 +64,7 @@ def sobreposicao_planos(pl1,pl2):
 					pontos.append((pl1[i],pl1[j]))
 					
 					pontos.append((pl2[i],pl1[j]))
-					pontos.append((pl2[i],pl2[j]))	
-	print(pontos)				
+					pontos.append((pl2[i],pl2[j]))					
 	pontos = magica_planos(pl1,pl2,pontos)
 	return pontos
 # fim sobreposição_planos
@@ -93,6 +92,14 @@ def magica_planos(pl1,pl2,pontos):
 	else:
 		return None
 #acabou a magica =/
+
+def direcao_parede(parede):
+	if (parede[2]-parede[0]) > (parede[3]-parede[1]):
+		return "H"
+	else:
+		return "L"
+	
+## direcao_parede
 def main():
 	p1="10 10 50 50"
 	p2="60 60 70 70"
@@ -100,12 +107,12 @@ def main():
 	#~ plano2=cria_plano(p2)
 	#~ print(plano1,plano2)
 	#~ print(area_sobreposta(plano1,plano2))
-	p1=cria_plano(p1)
+	#p1=cria_plano(p1)
 	
-	p2=cria_plano(p2)
+	#p2=cria_plano(p2)
 	
-	sobreposto = sobreposicao_planos(p1,p2)
-	print(sobreposto)
+	#sobreposto = sobreposicao_planos(p1,p2)
+	#print(sobreposto)
 	return 0
 
 if __name__ == '__main__':
